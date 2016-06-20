@@ -1424,7 +1424,7 @@
 					"$(PROJECT_DIR)/DJISdkDemo/VideoPreviewer/DJIH264Decoder/lib",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.sdkdemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.live;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1460,7 +1460,7 @@
 					"$(PROJECT_DIR)/DJISdkDemo/VideoPreviewer/DJIH264Decoder/lib",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.sdkdemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.live;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

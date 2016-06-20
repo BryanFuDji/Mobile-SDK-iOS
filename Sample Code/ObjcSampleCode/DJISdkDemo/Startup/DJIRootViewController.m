@@ -32,7 +32,7 @@
     [self.connectButton setEnabled:NO];
     
     //Register App with key
-    NSString* appKey = @"Please enter your App Key here";
+    NSString* appKey = @"9fd34604c489f05601216201";
     
     if ([appKey isEqualToString:@"Please enter your App Key here"]) {
         ShowResult(@"Please enter App Key.");
