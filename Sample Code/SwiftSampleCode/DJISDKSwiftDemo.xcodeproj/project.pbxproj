@@ -26,8 +26,6 @@
 		0239F27D1C3602AE0008DEA4 /* HotPointConfigView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0239F2601C3602AE0008DEA4 /* HotPointConfigView.xib */; };
 		0239F27E1C3602AE0008DEA4 /* NavigationHotPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0239F2611C3602AE0008DEA4 /* NavigationHotPointViewController.swift */; };
 		0239F2821C3602AE0008DEA4 /* NavigationIOCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0239F2661C3602AE0008DEA4 /* NavigationIOCViewController.swift */; };
-		0239F2841C3602AE0008DEA4 /* JoyStickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0239F2691C3602AE0008DEA4 /* JoyStickView.swift */; };
-		0239F2851C3602AE0008DEA4 /* NavigationJoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0239F26A1C3602AE0008DEA4 /* NavigationJoystickViewController.swift */; };
 		0239F2871C3602AE0008DEA4 /* PanoramaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0239F26D1C3602AE0008DEA4 /* PanoramaViewController.swift */; };
 		0239F2891C3602AE0008DEA4 /* NavigationWaypointActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0239F2701C3602AE0008DEA4 /* NavigationWaypointActionView.swift */; };
 		0239F28A1C3602AE0008DEA4 /* NavigationWaypointActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0239F2711C3602AE0008DEA4 /* NavigationWaypointActionView.xib */; };
@@ -51,8 +49,6 @@
 		0264D40B1C40666D002313FE /* SleepModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0264D4081C40666D002313FE /* SleepModeViewController.xib */; };
 		0264D4101C407DE2002313FE /* CameraFPVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264D40E1C407DE2002313FE /* CameraFPVViewController.swift */; };
 		0264D4111C407DE2002313FE /* CameraFPVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0264D40F1C407DE2002313FE /* CameraFPVViewController.xib */; };
-		0271B3D21C3DAE5B0056DB2B /* VideoPreviewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0271B3D11C3DAE3E0056DB2B /* VideoPreviewer.framework */; };
-		0271B3D31C3DAE5B0056DB2B /* VideoPreviewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0271B3D11C3DAE3E0056DB2B /* VideoPreviewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0271B3F11C3DF6900056DB2B /* AirLinkActionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0271B3DC1C3DF6900056DB2B /* AirLinkActionsTableViewController.swift */; };
 		0271B3F21C3DF6900056DB2B /* WiFiLinkSSIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0271B3DE1C3DF6900056DB2B /* WiFiLinkSSIDViewController.swift */; };
 		0271B3F31C3DF6900056DB2B /* FCCompassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0271B3E11C3DF6900056DB2B /* FCCompassViewController.swift */; };
@@ -63,8 +59,8 @@
 		0271B3F81C3DF6900056DB2B /* FCLandingGearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0271B3E81C3DF6900056DB2B /* FCLandingGearViewController.swift */; };
 		0271B3F91C3DF6900056DB2B /* FCLandingGearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0271B3E91C3DF6900056DB2B /* FCLandingGearViewController.xib */; };
 		0271B3FB1C3DF6900056DB2B /* FCOrientationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0271B3EC1C3DF6900056DB2B /* FCOrientationViewController.xib */; };
-		02D8CBD21C3B26AC00D2106D /* DJISDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D8CBD11C3B26AC00D2106D /* DJISDK.framework */; };
-		02D8CBD41C3B26BC00D2106D /* DJISDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02D8CBD11C3B26AC00D2106D /* DJISDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		02D044081C974F0E007AD0C7 /* FCIntelligentAssistantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D044061C974F0E007AD0C7 /* FCIntelligentAssistantViewController.swift */; };
+		02D044091C974F0E007AD0C7 /* FCIntelligentAssistantViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02D044071C974F0E007AD0C7 /* FCIntelligentAssistantViewController.xib */; };
 		02D8CC141C3B418500D2106D /* BatteryActionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D8CBE51C3B418500D2106D /* BatteryActionsTableViewController.swift */; };
 		02D8CC151C3B418500D2106D /* BatterySelfDischargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D8CBE71C3B418500D2106D /* BatterySelfDischargeViewController.swift */; };
 		02D8CC161C3B418500D2106D /* CameraActionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D8CBE91C3B418500D2106D /* CameraActionsTableViewController.swift */; };
@@ -91,6 +87,11 @@
 		02D8CC311C3B418500D2106D /* GimbalPushInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D8CC101C3B418500D2106D /* GimbalPushInfoViewController.swift */; };
 		02D8CC321C3B418500D2106D /* GimbalRotationInSpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D8CC121C3B418500D2106D /* GimbalRotationInSpeedViewController.swift */; };
 		02D8CC331C3B418500D2106D /* GimbalRotationInSpeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02D8CC131C3B418500D2106D /* GimbalRotationInSpeedViewController.xib */; };
+		02E214D61CC6FD0B00B53188 /* DJIGimbal+CapabilityCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E214D31CC6FD0B00B53188 /* DJIGimbal+CapabilityCheck.swift */; };
+		02E214D71CC6FD0B00B53188 /* GimbalCapabilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E214D41CC6FD0B00B53188 /* GimbalCapabilityViewController.swift */; };
+		02E214D81CC6FD0B00B53188 /* GimbalCapabilityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02E214D51CC6FD0B00B53188 /* GimbalCapabilityViewController.xib */; };
+		02E214E01CC7055500B53188 /* JoyStickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E214DE1CC7055500B53188 /* JoyStickView.swift */; };
+		02E214E11CC7055500B53188 /* NavigationJoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E214DF1CC7055500B53188 /* NavigationJoystickViewController.swift */; };
 		386F683B1BF68B41003A8ED0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 386F68391BF68B41003A8ED0 /* Main.storyboard */; };
 		386F683D1BF68B41003A8ED0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 386F683C1BF68B41003A8ED0 /* Assets.xcassets */; };
 		386F68401BF68B41003A8ED0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 386F683E1BF68B41003A8ED0 /* LaunchScreen.storyboard */; };
@@ -99,19 +100,23 @@
 		386F685D1BF6BF27003A8ED0 /* StartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386F685C1BF6BF27003A8ED0 /* StartupViewController.swift */; };
 		38CE482A1C000D3E00AA190D /* LogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CE48291C000D3E00AA190D /* LogHelper.swift */; };
 		38F395FF1C408A9B00EB7E52 /* ComponentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F395FE1C408A9B00EB7E52 /* ComponentsViewController.swift */; };
+		B82541F01C98E7180021CDDF /* DJISDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82541E51C98E69E0021CDDF /* DJISDK.framework */; };
+		B82541F11C98E7180021CDDF /* DJISDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B82541E51C98E69E0021CDDF /* DJISDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B82541F21C98E7270021CDDF /* VideoPreviewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82541E41C98E6700021CDDF /* VideoPreviewer.framework */; };
+		B82541F31C98E7270021CDDF /* VideoPreviewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B82541E41C98E6700021CDDF /* VideoPreviewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0271B3D01C3DAE3E0056DB2B /* PBXContainerItemProxy */ = {
+		B82541E31C98E6700021CDDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0271B3CC1C3DAE3E0056DB2B /* VideoPreviewer.xcodeproj */;
+			containerPortal = B82541DF1C98E6700021CDDF /* VideoPreviewer.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 02A543FD1C3C51CB0083C11B;
 			remoteInfo = VideoPreviewer;
 		};
-		0271B3D41C3DAE5B0056DB2B /* PBXContainerItemProxy */ = {
+		B82541F41C98E7270021CDDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0271B3CC1C3DAE3E0056DB2B /* VideoPreviewer.xcodeproj */;
+			containerPortal = B82541DF1C98E6700021CDDF /* VideoPreviewer.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 02A543FC1C3C51CB0083C11B;
 			remoteInfo = VideoPreviewer;
@@ -119,14 +124,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		386F68511BF68D16003A8ED0 /* Embed Frameworks */ = {
+		B89750BA1C65951800815416 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0271B3D31C3DAE5B0056DB2B /* VideoPreviewer.framework in Embed Frameworks */,
-				02D8CBD41C3B26BC00D2106D /* DJISDK.framework in Embed Frameworks */,
+				B82541F31C98E7270021CDDF /* VideoPreviewer.framework in Embed Frameworks */,
+				B82541F11C98E7180021CDDF /* DJISDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,8 +158,6 @@
 		0239F2601C3602AE0008DEA4 /* HotPointConfigView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotPointConfigView.xib; sourceTree = "<group>"; };
 		0239F2611C3602AE0008DEA4 /* NavigationHotPointViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationHotPointViewController.swift; sourceTree = "<group>"; };
 		0239F2661C3602AE0008DEA4 /* NavigationIOCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationIOCViewController.swift; path = ../../../Missions/IOC/NavigationIOCViewController.swift; sourceTree = "<group>"; };
-		0239F2691C3602AE0008DEA4 /* JoyStickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoyStickView.swift; path = ../../../Missions/Joystick/JoyStickView.swift; sourceTree = "<group>"; };
-		0239F26A1C3602AE0008DEA4 /* NavigationJoystickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationJoystickViewController.swift; path = ../../../Missions/Joystick/NavigationJoystickViewController.swift; sourceTree = "<group>"; };
 		0239F26D1C3602AE0008DEA4 /* PanoramaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanoramaViewController.swift; sourceTree = "<group>"; };
 		0239F2701C3602AE0008DEA4 /* NavigationWaypointActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationWaypointActionView.swift; sourceTree = "<group>"; };
 		0239F2711C3602AE0008DEA4 /* NavigationWaypointActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationWaypointActionView.xib; sourceTree = "<group>"; };
@@ -178,7 +181,6 @@
 		0264D4081C40666D002313FE /* SleepModeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SleepModeViewController.xib; sourceTree = "<group>"; };
 		0264D40E1C407DE2002313FE /* CameraFPVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraFPVViewController.swift; sourceTree = "<group>"; };
 		0264D40F1C407DE2002313FE /* CameraFPVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraFPVViewController.xib; sourceTree = "<group>"; };
-		0271B3CC1C3DAE3E0056DB2B /* VideoPreviewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VideoPreviewer.xcodeproj; path = VideoPreviewer/VideoPreviewer.xcodeproj; sourceTree = "<group>"; };
 		0271B3DC1C3DF6900056DB2B /* AirLinkActionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirLinkActionsTableViewController.swift; sourceTree = "<group>"; };
 		0271B3DE1C3DF6900056DB2B /* WiFiLinkSSIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WiFiLinkSSIDViewController.swift; sourceTree = "<group>"; };
 		0271B3E11C3DF6900056DB2B /* FCCompassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCCompassViewController.swift; sourceTree = "<group>"; };
@@ -189,7 +191,8 @@
 		0271B3E81C3DF6900056DB2B /* FCLandingGearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCLandingGearViewController.swift; sourceTree = "<group>"; };
 		0271B3E91C3DF6900056DB2B /* FCLandingGearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCLandingGearViewController.xib; sourceTree = "<group>"; };
 		0271B3EC1C3DF6900056DB2B /* FCOrientationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCOrientationViewController.xib; sourceTree = "<group>"; };
-		02D8CBD11C3B26AC00D2106D /* DJISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DJISDK.framework; sourceTree = "<group>"; };
+		02D044061C974F0E007AD0C7 /* FCIntelligentAssistantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FCIntelligentAssistantViewController.swift; path = IntelligentAssistant/FCIntelligentAssistantViewController.swift; sourceTree = "<group>"; };
+		02D044071C974F0E007AD0C7 /* FCIntelligentAssistantViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FCIntelligentAssistantViewController.xib; path = IntelligentAssistant/FCIntelligentAssistantViewController.xib; sourceTree = "<group>"; };
 		02D8CBE51C3B418500D2106D /* BatteryActionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryActionsTableViewController.swift; sourceTree = "<group>"; };
 		02D8CBE71C3B418500D2106D /* BatterySelfDischargeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatterySelfDischargeViewController.swift; sourceTree = "<group>"; };
 		02D8CBE91C3B418500D2106D /* CameraActionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraActionsTableViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +219,11 @@
 		02D8CC101C3B418500D2106D /* GimbalPushInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GimbalPushInfoViewController.swift; sourceTree = "<group>"; };
 		02D8CC121C3B418500D2106D /* GimbalRotationInSpeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GimbalRotationInSpeedViewController.swift; sourceTree = "<group>"; };
 		02D8CC131C3B418500D2106D /* GimbalRotationInSpeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GimbalRotationInSpeedViewController.xib; sourceTree = "<group>"; };
+		02E214D31CC6FD0B00B53188 /* DJIGimbal+CapabilityCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DJIGimbal+CapabilityCheck.swift"; sourceTree = "<group>"; };
+		02E214D41CC6FD0B00B53188 /* GimbalCapabilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GimbalCapabilityViewController.swift; sourceTree = "<group>"; };
+		02E214D51CC6FD0B00B53188 /* GimbalCapabilityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GimbalCapabilityViewController.xib; sourceTree = "<group>"; };
+		02E214DE1CC7055500B53188 /* JoyStickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoyStickView.swift; path = DJISDKSwiftDemo/Components/FlightController/Joystick/JoyStickView.swift; sourceTree = SOURCE_ROOT; };
+		02E214DF1CC7055500B53188 /* NavigationJoystickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationJoystickViewController.swift; path = DJISDKSwiftDemo/Components/FlightController/Joystick/NavigationJoystickViewController.swift; sourceTree = SOURCE_ROOT; };
 		386F68321BF68B41003A8ED0 /* DJISDKSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJISDKSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		386F683A1BF68B41003A8ED0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		386F683C1BF68B41003A8ED0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -226,6 +234,8 @@
 		386F685C1BF6BF27003A8ED0 /* StartupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
 		38CE48291C000D3E00AA190D /* LogHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogHelper.swift; sourceTree = "<group>"; };
 		38F395FE1C408A9B00EB7E52 /* ComponentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComponentsViewController.swift; path = Components/ComponentsViewController.swift; sourceTree = "<group>"; };
+		B82541DF1C98E6700021CDDF /* VideoPreviewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VideoPreviewer.xcodeproj; path = ../VideoPreviewer/VideoPreviewer.xcodeproj; sourceTree = "<group>"; };
+		B82541E51C98E69E0021CDDF /* DJISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DJISDK.framework; path = ../DJISDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,8 +243,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0271B3D21C3DAE5B0056DB2B /* VideoPreviewer.framework in Frameworks */,
-				02D8CBD21C3B26AC00D2106D /* DJISDK.framework in Frameworks */,
+				B82541F21C98E7270021CDDF /* VideoPreviewer.framework in Frameworks */,
+				B82541F01C98E7180021CDDF /* DJISDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +257,6 @@
 				0239F1D71C332D450008DEA4 /* CustomMission */,
 				0239F2591C3602AE0008DEA4 /* FollowMe */,
 				0239F25C1C3602AE0008DEA4 /* HotPoint */,
-				0239F2681C3602AE0008DEA4 /* Joystick */,
 				0239F26C1C3602AE0008DEA4 /* Panorama */,
 				0239F26F1C3602AE0008DEA4 /* Waypoint */,
 				0239F2471C333DA30008DEA4 /* DJIBaseViewController.swift */,
@@ -310,14 +319,6 @@
 			);
 			name = HotPoint;
 			path = Missions/HotPoint;
-			sourceTree = "<group>";
-		};
-		0239F2681C3602AE0008DEA4 /* Joystick */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Joystick;
-			path = Missions/Joystick;
 			sourceTree = "<group>";
 		};
 		0239F26C1C3602AE0008DEA4 /* Panorama */ = {
@@ -427,14 +428,6 @@
 			path = FPVLiveVideo;
 			sourceTree = "<group>";
 		};
-		0271B3CD1C3DAE3E0056DB2B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0271B3D11C3DAE3E0056DB2B /* VideoPreviewer.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		0271B3DB1C3DF6900056DB2B /* AirLink */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +451,7 @@
 		0271B3DF1C3DF6900056DB2B /* FlightController */ = {
 			isa = PBXGroup;
 			children = (
+				02D044011C9743DF007AD0C7 /* IntelligentAssistant */,
 				0271B3E31C3DF6900056DB2B /* FCActionsTableViewController.swift */,
 				0264D3FA1C403365002313FE /* General */,
 				0271B3E01C3DF6900056DB2B /* Compass */,
@@ -509,10 +503,19 @@
 		0271B3ED1C3DF6900056DB2B /* VirtualStick */ = {
 			isa = PBXGroup;
 			children = (
-				0239F2691C3602AE0008DEA4 /* JoyStickView.swift */,
-				0239F26A1C3602AE0008DEA4 /* NavigationJoystickViewController.swift */,
+				02E214DE1CC7055500B53188 /* JoyStickView.swift */,
+				02E214DF1CC7055500B53188 /* NavigationJoystickViewController.swift */,
 			);
 			path = VirtualStick;
+			sourceTree = "<group>";
+		};
+		02D044011C9743DF007AD0C7 /* IntelligentAssistant */ = {
+			isa = PBXGroup;
+			children = (
+				02D044061C974F0E007AD0C7 /* FCIntelligentAssistantViewController.swift */,
+				02D044071C974F0E007AD0C7 /* FCIntelligentAssistantViewController.xib */,
+			);
+			name = IntelligentAssistant;
 			sourceTree = "<group>";
 		};
 		02D8CBE41C3B418500D2106D /* Battery */ = {
@@ -637,6 +640,7 @@
 		02D8CC0D1C3B418500D2106D /* Gimbal */ = {
 			isa = PBXGroup;
 			children = (
+				02E214D21CC6FD0B00B53188 /* GimbalCapability */,
 				02D8CC0E1C3B418500D2106D /* GimbalActionsTableTableViewController.swift */,
 				02D8CC0F1C3B418500D2106D /* PushInfo */,
 				02D8CC111C3B418500D2106D /* RotationInSpeed */,
@@ -660,6 +664,16 @@
 				02D8CC131C3B418500D2106D /* GimbalRotationInSpeedViewController.xib */,
 			);
 			path = RotationInSpeed;
+			sourceTree = "<group>";
+		};
+		02E214D21CC6FD0B00B53188 /* GimbalCapability */ = {
+			isa = PBXGroup;
+			children = (
+				02E214D31CC6FD0B00B53188 /* DJIGimbal+CapabilityCheck.swift */,
+				02E214D41CC6FD0B00B53188 /* GimbalCapabilityViewController.swift */,
+				02E214D51CC6FD0B00B53188 /* GimbalCapabilityViewController.xib */,
+			);
+			path = GimbalCapability;
 			sourceTree = "<group>";
 		};
 		386F68291BF68B41003A8ED0 = {
@@ -705,8 +719,8 @@
 		386F684C1BF68C58003A8ED0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0271B3CC1C3DAE3E0056DB2B /* VideoPreviewer.xcodeproj */,
-				02D8CBD11C3B26AC00D2106D /* DJISDK.framework */,
+				B82541E51C98E69E0021CDDF /* DJISDK.framework */,
+				B82541DF1C98E6700021CDDF /* VideoPreviewer.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -727,6 +741,14 @@
 				386F685C1BF6BF27003A8ED0 /* StartupViewController.swift */,
 			);
 			path = Startup;
+			sourceTree = "<group>";
+		};
+		B82541E01C98E6700021CDDF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B82541E41C98E6700021CDDF /* VideoPreviewer.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		E274FCE31C0CC43E00E0E205 /* Components */ = {
@@ -755,12 +777,12 @@
 				386F682E1BF68B41003A8ED0 /* Sources */,
 				386F682F1BF68B41003A8ED0 /* Frameworks */,
 				386F68301BF68B41003A8ED0 /* Resources */,
-				386F68511BF68D16003A8ED0 /* Embed Frameworks */,
+				B89750BA1C65951800815416 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0271B3D51C3DAE5B0056DB2B /* PBXTargetDependency */,
+				B82541F51C98E7270021CDDF /* PBXTargetDependency */,
 			);
 			name = DJISDKSwiftDemo;
 			productName = DJISDKSwiftDemo;
@@ -795,8 +817,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 0271B3CD1C3DAE3E0056DB2B /* Products */;
-					ProjectRef = 0271B3CC1C3DAE3E0056DB2B /* VideoPreviewer.xcodeproj */;
+					ProductGroup = B82541E01C98E6700021CDDF /* Products */;
+					ProjectRef = B82541DF1C98E6700021CDDF /* VideoPreviewer.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -807,11 +829,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		0271B3D11C3DAE3E0056DB2B /* VideoPreviewer.framework */ = {
+		B82541E41C98E6700021CDDF /* VideoPreviewer.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = VideoPreviewer.framework;
-			remoteRef = 0271B3D01C3DAE3E0056DB2B /* PBXContainerItemProxy */;
+			remoteRef = B82541E31C98E6700021CDDF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -838,7 +860,9 @@
 				02D8CC331C3B418500D2106D /* GimbalRotationInSpeedViewController.xib in Resources */,
 				02D8CC1F1C3B418500D2106D /* CameraRecordVideoViewController.xib in Resources */,
 				0239F28E1C3602AE0008DEA4 /* NavigationWaypointMissionConfigView.xib in Resources */,
+				02E214D81CC6FD0B00B53188 /* GimbalCapabilityViewController.xib in Resources */,
 				0239F28A1C3602AE0008DEA4 /* NavigationWaypointActionView.xib in Resources */,
+				02D044091C974F0E007AD0C7 /* FCIntelligentAssistantViewController.xib in Resources */,
 				0264D3FF1C403365002313FE /* FCGeneralControlViewController.xib in Resources */,
 				0239F1D41C332D400008DEA4 /* DJICollectionViewCell.xib in Resources */,
 				0239F27D1C3602AE0008DEA4 /* HotPointConfigView.xib in Resources */,
@@ -870,6 +894,7 @@
 				0239F28D1C3602AE0008DEA4 /* NavigationWaypointMissionConfigView.swift in Sources */,
 				0264D3E71C402CB0002313FE /* RebootWiFiViewController.swift in Sources */,
 				02D8CC1B1C3B418500D2106D /* CameraPlaybackDownloadViewController.swift in Sources */,
+				02E214D71CC6FD0B00B53188 /* GimbalCapabilityViewController.swift in Sources */,
 				0271B3F21C3DF6900056DB2B /* WiFiLinkSSIDViewController.swift in Sources */,
 				0271B3F81C3DF6900056DB2B /* FCLandingGearViewController.swift in Sources */,
 				02D8CC151C3B418500D2106D /* BatterySelfDischargeViewController.swift in Sources */,
@@ -877,6 +902,7 @@
 				02D8CC201C3B418500D2106D /* CameraISOViewController.swift in Sources */,
 				38CE482A1C000D3E00AA190D /* LogHelper.swift in Sources */,
 				02D8CC1D1C3B418500D2106D /* CameraPlaybackPushInfoViewController.swift in Sources */,
+				02E214D61CC6FD0B00B53188 /* DJIGimbal+CapabilityCheck.swift in Sources */,
 				0239F2551C338C740008DEA4 /* DJIAircraftAnnotationView.swift in Sources */,
 				0271B3F61C3DF6900056DB2B /* FCFlightLimitationViewController.swift in Sources */,
 				02D8CC2E1C3B418500D2106D /* DemoTableViewController.swift in Sources */,
@@ -887,11 +913,13 @@
 				02D8CC2B1C3B418500D2106D /* DemoPushInfoViewController.swift in Sources */,
 				386F68591BF6BED7003A8ED0 /* AppDelegate.swift in Sources */,
 				0239F28F1C3602AE0008DEA4 /* NavigationWaypointViewController.swift in Sources */,
+				02E214E01CC7055500B53188 /* JoyStickView.swift in Sources */,
 				0264D3E91C402CB0002313FE /* SetGetChannelViewController.swift in Sources */,
 				0239F1D31C332D400008DEA4 /* DJICollectionViewCell.swift in Sources */,
 				0264D3F81C402CC8002313FE /* RCParingViewController.swift in Sources */,
 				0239F2491C333DA30008DEA4 /* DJIBaseViewController.swift in Sources */,
-				0239F2851C3602AE0008DEA4 /* NavigationJoystickViewController.swift in Sources */,
+				02D044081C974F0E007AD0C7 /* FCIntelligentAssistantViewController.swift in Sources */,
+				02E214E11CC7055500B53188 /* NavigationJoystickViewController.swift in Sources */,
 				386F685D1BF6BF27003A8ED0 /* StartupViewController.swift in Sources */,
 				0239F27C1C3602AE0008DEA4 /* HotPointConfigView.swift in Sources */,
 				0239F28B1C3602AE0008DEA4 /* NavigationWaypointConfigView.swift in Sources */,
@@ -918,17 +946,16 @@
 				0264D40A1C40666D002313FE /* SleepModeViewController.swift in Sources */,
 				02D8CC231C3B418500D2106D /* CameraPushInfoViewController.swift in Sources */,
 				0239F1D51C332D400008DEA4 /* DJIStepsCollectionView.swift in Sources */,
-				0239F2841C3602AE0008DEA4 /* JoyStickView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0271B3D51C3DAE5B0056DB2B /* PBXTargetDependency */ = {
+		B82541F51C98E7270021CDDF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = VideoPreviewer;
-			targetProxy = 0271B3D41C3DAE5B0056DB2B /* PBXContainerItemProxy */;
+			targetProxy = B82541F41C98E7270021CDDF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1043,21 +1070,15 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/..",
+					"$(PROJECT_DIR)/../VideoPreviewer",
 				);
-				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../VideoPreviewer/VideoPreviewer\"/**",
-					"$(PROJECT_DIR)/VideoPreviewer/VideoPreviewer/ffmpeg/include",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = DJISDKSwiftDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/VideoPreviewer/VideoPreviewer/DJIH264Decoder/lib",
-					"$(PROJECT_DIR)/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.sdk.swiftSample;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.swiftSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1070,21 +1091,15 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/..",
+					"$(PROJECT_DIR)/../VideoPreviewer",
 				);
-				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../VideoPreviewer/VideoPreviewer\"/**",
-					"$(PROJECT_DIR)/VideoPreviewer/VideoPreviewer/ffmpeg/include",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = DJISDKSwiftDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/VideoPreviewer/VideoPreviewer/DJIH264Decoder/lib",
-					"$(PROJECT_DIR)/VideoPreviewer/VideoPreviewer/ffmpeg/lib",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.sdk.swiftSample;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.swiftSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

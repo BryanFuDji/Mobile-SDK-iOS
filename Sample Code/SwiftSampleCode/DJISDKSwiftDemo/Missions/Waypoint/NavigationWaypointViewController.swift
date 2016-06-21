@@ -169,11 +169,11 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
         self.isEditEnable = false
         self.waypointConfigView.alpha = 0
         self.waypointConfigView.delegate = self
-        self.waypointConfigView.okButton.addTarget(self, action: "onWaypointConfigOKButtonClicked:", forControlEvents: .TouchUpInside)
+        self.waypointConfigView.okButton.addTarget(self, action: #selector(NavigationWaypointViewController.onWaypointConfigOKButtonClicked(_:)), forControlEvents: .TouchUpInside)
         self.view!.addSubview(self.waypointConfigView)
         self.waypointMissionConfigView = NavigationWaypointMissionConfigView()
         self.waypointMissionConfigView!.alpha = 0
-        self.waypointMissionConfigView!.okButton.addTarget(self, action: "onMissionConfigOKButtonClicked:", forControlEvents: .TouchUpInside)
+        self.waypointMissionConfigView!.okButton.addTarget(self, action: #selector(NavigationWaypointViewController.onMissionConfigOKButtonClicked(_:)), forControlEvents: .TouchUpInside)
         self.view!.addSubview(self.waypointMissionConfigView!)
         self.tipsLabel.layer.cornerRadius = 5.0
         self.tipsLabel.layer.backgroundColor = UIColor.blackColor().CGColor
@@ -184,7 +184,7 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
         super.viewWillAppear(animated)
         let aircraft: DJIAircraft? = self.fetchAircraft()
         if aircraft != nil {
-            aircraft!.flightController!.delegate = self
+            aircraft!.flightController?.delegate = self
         }
         
         self.missionManager.delegate = self
@@ -196,7 +196,7 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
         self.navigationController!.navigationBarHidden = false
         let aircraft: DJIAircraft? = self.fetchAircraft()
         if aircraft != nil {
-            if aircraft!.flightController!.delegate === self {
+            if aircraft!.flightController?.delegate === self {
                 aircraft!.flightController!.delegate = nil
             }
         }
@@ -231,7 +231,7 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
     }
 
     func calcCornerRadius() {
-        for var i :Int32 = 0; i < Int32(self.waypointMission.waypointCount); i++ {
+        for i :Int32 in 0 ..< Int32(self.waypointMission.waypointCount) {
             let wp: DJIWaypoint = self.waypointMission.getWaypointAtIndex(i)!
             var prevWaypoint: DJIWaypoint? = nil
             var nextWaypoint: DJIWaypoint? = nil
@@ -304,6 +304,10 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
         self.waypointMission.addWaypoint(wp2)
         self.waypointMission.addWaypoint(wp3)
         self.waypointMission.addWaypoint(wp4)
+        self.waypointMission.addWaypoint(wp1)
+        self.waypointMission.addWaypoint(wp2)
+        self.waypointMission.addWaypoint(wp3)
+        self.waypointMission.addWaypoint(wp4)
         if self.waypointMission.flightPathMode == DJIWaypointMissionFlightPathMode.Curved {
             self.calcCornerRadius()
         }
@@ -316,6 +320,11 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
         self.waypointMission.headingMode = DJIWaypointMissionHeadingMode(rawValue: UInt(self.waypointMissionConfigView!.headingMode.selectedSegmentIndex))!
         self.waypointMission.flightPathMode = DJIWaypointMissionFlightPathMode(rawValue: UInt(self.waypointMissionConfigView!.airlineMode.selectedSegmentIndex))!
         self.waypointMission.removeAllWaypoints()
+        
+        let point = self.waypointList.first;
+        if (point != nil){
+            self.waypointList.append(point!)
+        }
         self.waypointMission.addWaypoints(self.waypointList)
         if self.waypointMission.flightPathMode == DJIWaypointMissionFlightPathMode.Curved {
             self.calcCornerRadius()
@@ -325,7 +334,7 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
     @IBAction func onEditButtonClicked(sender: UIButton) {
         self.isEditEnable = !self.isEditEnable
         if self.isEditEnable {
-            self.tapGesture = UITapGestureRecognizer(target: self, action: "onMapViewTap:")
+            self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(NavigationWaypointViewController.onMapViewTap(_:)))
             self.view!.addGestureRecognizer(self.tapGesture!)
             sender.setTitle("Finished", forState: .Normal)
         }
@@ -369,7 +378,7 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
             let wpAnno: DJIWaypointAnnotation = self.waypointAnnotations[index] as! DJIWaypointAnnotation
             self.waypointAnnotations.removeAtIndex(index)
             self.mapView.removeAnnotation(wpAnno)
-            for var i = 0; i < self.waypointAnnotations.count; i++ {
+            for i in 0 ..< self.waypointAnnotations.count {
                 let wpAnno: DJIWaypointAnnotation = self.waypointAnnotations[i] as! DJIWaypointAnnotation
                 wpAnno.text = "\(i + 1)"
                 let annoView: DJIWaypointAnnotationView = self.mapView.viewForAnnotation(wpAnno) as! DJIWaypointAnnotationView
@@ -379,7 +388,7 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
     }
 
     func configViewDidDeleteAllWaypoints() {
-        for var i = 0; i < self.waypointAnnotations.count; i++ {
+        for i in 0 ..< self.waypointAnnotations.count {
             let wpAnno: DJIWaypointAnnotation = self.waypointAnnotations[i] as! DJIWaypointAnnotation
             self.mapView.removeAnnotation(wpAnno)
         }

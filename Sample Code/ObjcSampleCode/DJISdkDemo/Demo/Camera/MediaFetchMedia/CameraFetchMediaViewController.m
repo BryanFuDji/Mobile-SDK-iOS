@@ -13,7 +13,7 @@
  */
 #import <DJISDK/DJISDK.h>
 #import "DemoUtility.h"
-#import "VideoPreviewer.h"
+#import <VideoPreviewer/VideoPreviewer.h>
 #import "CameraFetchMediaViewController.h"
 
 @interface CameraFetchMediaViewController ()

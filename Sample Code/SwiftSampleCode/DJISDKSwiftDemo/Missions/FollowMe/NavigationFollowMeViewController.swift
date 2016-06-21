@@ -109,7 +109,7 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
         super.viewDidAppear(animated)
         // flight controller should be ready
         if (self.aircraft != nil) {
-            self.aircraft!.flightController!.delegate = self
+            self.aircraft!.flightController?.delegate = self
         }
         // set mission manager delegate
         self.missionManager = DJIMissionManager.sharedInstance()!
@@ -124,8 +124,8 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
         }
      
         if (self.aircraft != nil){
-            if self.aircraft!.flightController!.delegate === self {
-                self.aircraft!.flightController!.delegate = nil
+            if self.aircraft!.flightController?.delegate === self {
+                self.aircraft!.flightController?.delegate = nil
             }
         }
     }
@@ -143,7 +143,7 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
                 mLocationManager!.delegate = self
                 mLocationManager!.desiredAccuracy = kCLLocationAccuracyBestForNavigation
                 mLocationManager!.distanceFilter = 0.1
-                if mLocationManager!.respondsToSelector("requestAlwaysAuthorization") {
+                if mLocationManager!.respondsToSelector(#selector(CLLocationManager.requestAlwaysAuthorization)) {
                     mLocationManager!.requestAlwaysAuthorization()
                 }
                 mLocationManager!.startUpdatingLocation()
@@ -164,9 +164,9 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
     }
 
     func startUpdateTimer() {
-        NSThread.detachNewThreadSelector("followMeTest", toTarget: self, withObject: nil)
+        NSThread.detachNewThreadSelector(#selector(NavigationFollowMeViewController.followMeTest), toTarget: self, withObject: nil)
         if mUpdateTimer == nil {
-            mUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "onUpdateTimerTicked:", userInfo: nil, repeats: true)
+            mUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(NavigationFollowMeViewController.onUpdateTimerTicked(_:)), userInfo: nil, repeats: true)
             mUpdateTimer!.fire()
         }
     }
@@ -224,7 +224,7 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         switch status {
             case .NotDetermined:
-                 if mLocationManager!.respondsToSelector("requestAlwaysAuthorization") {
+                 if mLocationManager!.respondsToSelector(#selector(CLLocationManager.requestAlwaysAuthorization)) {
                     mLocationManager!.requestWhenInUseAuthorization()
                 }
 

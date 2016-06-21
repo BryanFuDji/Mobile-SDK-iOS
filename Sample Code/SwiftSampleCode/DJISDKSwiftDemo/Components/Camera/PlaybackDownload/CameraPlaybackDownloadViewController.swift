@@ -47,7 +47,6 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
         }
     }
     
-    var videoFeedView: UIView? = nil
     @IBOutlet weak var selectFirstButton: UIButton!
     @IBOutlet weak var selectSecondButton: UIButton!
     @IBOutlet weak var downloadButton: UIButton!
@@ -72,7 +71,7 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
         // set delegate to render camera's video feed into the view
         camera!.delegate = self
         // set playback manager delegate to check playback state
-        camera!.playbackManager.delegate = self
+        camera!.playbackManager?.delegate = self
         // start to check the pre-condition
         self.getCameraMode()
     }
@@ -84,8 +83,8 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
         if camera != nil && camera!.delegate === self {
             camera!.delegate = nil
         }
-        if camera != nil  && camera!.playbackManager.delegate === self {
-            camera!.playbackManager.delegate = nil
+        if camera != nil  && camera!.playbackManager?.delegate === self {
+            camera!.playbackManager?.delegate = nil
         }
         self.cleanVideoPreview()
     }
@@ -130,14 +129,14 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
     @IBAction func onSelectFirstClicked(sender: AnyObject) {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
-            camera?.playbackManager.toggleFileSelectionAtIndex(0)
+            camera?.playbackManager?.toggleFileSelectionAtIndex(0)
         }
     }
 
     @IBAction func onSelectSecondClicked(sender: AnyObject) {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
-            camera?.playbackManager.toggleFileSelectionAtIndex(1)
+            camera?.playbackManager?.toggleFileSelectionAtIndex(1)
         }
     }
 
@@ -149,7 +148,7 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
             var currentFileRecievedSize: UInt = 0
             var currentFileName: String? = nil
             
-            camera?.playbackManager.downloadSelectedFilesWithPreparation({[weak self](fileName: String?, fileType: DJIDownloadFileType, fileSize: UInt, skip: UnsafeMutablePointer<ObjCBool>) -> Void in
+            camera?.playbackManager?.downloadSelectedFilesWithPreparation({[weak self](fileName: String?, fileType: DJIDownloadFileType, fileSize: UInt, skip: UnsafeMutablePointer<ObjCBool>) -> Void in
                 
                 currentFileName = fileName
                 self?.statusLabel.text = "Start to download file: \(fileName)"
@@ -183,21 +182,12 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
     }
 
     func setVideoPreview() {
-        self.videoFeedView = UIView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
-        self.view!.addSubview(self.videoFeedView!)
-        self.view!.sendSubviewToBack(self.videoFeedView!)
-        //    self.videoFeedView.backgroundColor = [UIColor grayColor];
         VideoPreviewer.instance().start()
-        VideoPreviewer.instance().setView(self.videoFeedView)
+        VideoPreviewer.instance().setView(self.view)
     }
 
     func cleanVideoPreview() {
         VideoPreviewer.instance().unSetView()
-        VideoPreviewer.removePreview()
-        if self.videoFeedView != nil {
-            self.videoFeedView!.removeFromSuperview()
-            self.videoFeedView = nil
-        }
     }
 
 
@@ -214,9 +204,7 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
     }
 
     func camera(camera: DJICamera, didReceiveVideoData videoBuffer: UnsafeMutablePointer<UInt8>, length size: Int) {
-        let pBuffer = UnsafeMutablePointer<UInt8>.alloc(size)
-        memcpy(pBuffer, videoBuffer, size)
-        VideoPreviewer.instance().dataQueue.push(pBuffer, length: Int32(size))
+        VideoPreviewer.instance().push(videoBuffer, length: Int32(size))
     }
 
     func playbackManager(playbackManager: DJIPlaybackManager, didUpdatePlaybackState playbackState: DJICameraPlaybackState) {

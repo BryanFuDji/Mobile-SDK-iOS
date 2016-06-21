@@ -107,9 +107,9 @@ class CameraFetchMediaViewController: DJIBaseViewController {
 
     func startFetchMedia() {
         let camera: DJICamera? = self.fetchCamera()
-        if camera != nil {
+        if camera != nil && camera?.mediaManager != nil {
             
-            camera!.mediaManager.fetchMediaListWithCompletion( {[weak self](mediaList:[DJIMedia]?, error: NSError?) -> Void in
+            camera!.mediaManager!.fetchMediaListWithCompletion( {[weak self](mediaList:[DJIMedia]?, error: NSError?) -> Void in
                 
                 if error != nil {
                     self?.showAlertResult("ERROR: fetchMediaListWithCompletion:\(error!.description)")
@@ -131,7 +131,7 @@ class CameraFetchMediaViewController: DJIBaseViewController {
         if self.imageMedia?.thumbnail == nil {
             // fetch thumbnail is not invoked yet
             
-            self.imageMedia!.fetchThumbnailWithCompletion({[weak self](error: NSError?) -> Void in
+            self.imageMedia?.fetchThumbnailWithCompletion({[weak self](error: NSError?) -> Void in
                 
                 if error != nil {
                     self?.showAlertResult("ERROR: fetchThumbnailWithCompletion:\(error!.description)")
@@ -152,7 +152,7 @@ class CameraFetchMediaViewController: DJIBaseViewController {
     @IBAction func onShowPreviewButtonClicked(sender: AnyObject) {
         self.showPreviewButton.enabled = false
         
-        self.imageMedia!.fetchPreviewImageWithCompletion({[weak self](image: UIImage, error: NSError?) -> Void in
+        self.imageMedia?.fetchPreviewImageWithCompletion({[weak self](image: UIImage, error: NSError?) -> Void in
             
             if error != nil {
                 self?.showAlertResult("ERROR: fetchPreviewImageWithCompletion:\(error!.description)")
@@ -177,7 +177,7 @@ class CameraFetchMediaViewController: DJIBaseViewController {
         self.showFullImageButton.enabled = false
         
         let downloadData: NSMutableData = NSMutableData()
-        self.imageMedia!.fetchMediaDataWithCompletion({[weak self](data:NSData?, stop:UnsafeMutablePointer<ObjCBool>, error:NSError?) -> Void in
+        self.imageMedia?.fetchMediaDataWithCompletion({[weak self](data:NSData?, stop:UnsafeMutablePointer<ObjCBool>, error:NSError?) -> Void in
             
             if error != nil {
                 self?.showAlertResult("ERROR: fetchMediaDataWithCompletion:\(error!.description)")
@@ -185,7 +185,7 @@ class CameraFetchMediaViewController: DJIBaseViewController {
             }
             else {
                 downloadData.appendData(data!)
-                if Int64(downloadData.length) == self?.imageMedia!.fileSizeInBytes {
+                if Int64(downloadData.length) == self?.imageMedia?.fileSizeInBytes {
                     dispatch_async(dispatch_get_main_queue(), {() -> Void in
                         self?.showPhotoWithData(downloadData)
                         self?.showFullImageButton.enabled = true
@@ -200,7 +200,7 @@ class CameraFetchMediaViewController: DJIBaseViewController {
     func showPhotoWithImage(image: UIImage) {
         let bkgndView: UIView = UIView(frame: self.view.bounds)
         bkgndView.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.7)
-        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "onImageViewTap:")
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CameraFetchMediaViewController.onImageViewTap(_:)))
         bkgndView.addGestureRecognizer(tapGesture)
         var width: CGFloat = image.size.width
         var height: CGFloat = image.size.height

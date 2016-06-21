@@ -9,12 +9,15 @@
  */
 #import "CameraFPVViewController.h"
 #import "DemoUtility.h"
-#import "VideoPreviewer.h"
+#import <VideoPreviewer/VideoPreviewer.h>
 #import <DJISDK/DJISDK.h>
 
 @interface CameraFPVViewController () <DJICameraDelegate>
 
 @property(nonatomic, weak) IBOutlet UIView* fpvView;
+@property (weak, nonatomic) IBOutlet UIView *fpvTemView;
+@property (weak, nonatomic) IBOutlet UISwitch *fpvTemEnableSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *fpvTemperatureData;
 
 @property(nonatomic, assign) BOOL needToSetMode;
 
@@ -33,7 +36,7 @@
     self.needToSetMode = YES;
     
     [[VideoPreviewer instance] start];
-    [[VideoPreviewer instance] setDecoderDataSource:kDJIDecoderDataSoureNone];
+    [[VideoPreviewer instance] setDecoderWithProduct:[DemoComponentHelper fetchProduct] andDecoderType:VideoPreviewerDecoderTypeSoftwareDecoder];
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -41,6 +44,8 @@
     [super viewWillAppear:animated];
     
     [[VideoPreviewer instance] setView:self.fpvView];
+    
+    [self updateThermalCameraUI]; 
 }
 
 -(void) viewWillDisappear:(BOOL)animated
@@ -51,38 +56,53 @@
     [[VideoPreviewer instance] unSetView];
 }
 
+
 /**
  *  VideoPreviewer is used to decode the video data and display the decoded frame on the view. VideoPreviewer provides both software 
- *  decoding and hardware decoding. When using hardware decoding, for different products, the decoding protocols are different.
+ *  decoding and hardware decoding. When using hardware decoding, for different products, the decoding protocols are different and the hardware decoding is only supported by some products.
  */
 -(IBAction) onSegmentControlValueChanged:(UISegmentedControl*)sender
 {
     if (sender.selectedSegmentIndex == 0) {
-        [[VideoPreviewer instance] setDecoderDataSource:kDJIDecoderDataSoureNone];
+    [[VideoPreviewer instance] setDecoderWithProduct:[DemoComponentHelper fetchProduct] andDecoderType:VideoPreviewerDecoderTypeSoftwareDecoder];
     }
     else
     {
-        DJIBaseProduct* product = [DemoComponentHelper fetchProduct];
-        if (product) {
-            NSString* productName = product.model;
-            if ([productName isEqualToString:@"Inspire 1"] ||
-                [productName isEqualToString:@"Inspire Pro"] ||
-                [productName isEqualToString:@"M100"] ||
-                [productName isEqualToString:@"OSMO"]) {
-                [[VideoPreviewer instance] setDecoderDataSource:kDJIDecoderDataSoureInspire];
-            }
-            else if ([productName isEqualToString:@"Phantom3 Advanced"]
-                     || [productName isEqualToString:@"Phantom3 Standard"]) {
-                [[VideoPreviewer instance] setDecoderDataSource:kDJIDecoderDataSourePhantom3Advanced];
-            }
-            else if ([productName isEqualToString:@"Phantom3 Professional"]) {
-                [[VideoPreviewer instance] setDecoderDataSource:kDJIDecoderDataSourePhantom3Professional];
-            }
-            else  {
-                NSLog(@"ERROR: the camera type is not recognized. ");
-                [[VideoPreviewer instance] setDecoderDataSource:kDJIDecoderDataSoureNone];
-            }
+        BOOL result = [[VideoPreviewer instance] setDecoderWithProduct:[DemoComponentHelper fetchProduct] andDecoderType:VideoPreviewerDecoderTypeHardwareDecoder];
+        if (!result) {
+            NSLog(@"Not suitable hardware decoder for the current product. "); 
         }
+    }
+}
+
+- (IBAction)onThermalTemperatureDataSwitchValueChanged:(id)sender {
+    DJICamera* camera = [DemoComponentHelper fetchCamera];
+    if (camera) {
+        [camera setThermalTemperatureDataEnabled:((UISwitch*)sender).on withCompletion:^(NSError * _Nullable error) {
+            if (error) {
+                ShowResult(@"Failed to set the thermal temperature data enabled: %@", error.description);
+            }
+        }];
+    }
+}
+
+- (void)updateThermalCameraUI {
+    DJICamera* camera = [DemoComponentHelper fetchCamera];
+    if (camera && [camera isThermalImagingCamera]) {
+        [self.fpvTemView setHidden:NO];
+        WeakRef(target);
+        [camera getThermalTemperatureDataEnabledWithCompletion:^(BOOL enabled, NSError * _Nullable error) {
+            WeakReturn(target);
+            if (error) {
+                ShowResult(@"Failed to get the Thermal Temperature Data enable status: %@", error.description);
+            }
+            else {
+                [target.fpvTemEnableSwitch setOn:enabled];
+            }
+        }];
+    }
+    else {
+        [self.fpvTemView setHidden:YES];
     }
 }
 
@@ -92,9 +112,9 @@
  */
 - (void)camera:(DJICamera *)camera didReceiveVideoData:(uint8_t *)videoBuffer length:(size_t)size
 {
-    uint8_t* pBuffer = (uint8_t*)malloc(size);
-    memcpy(pBuffer, videoBuffer, size);
-    [[[VideoPreviewer instance] dataQueue] push:pBuffer length:(int)size];
+    if(![[[VideoPreviewer instance] dataQueue] isFull]){
+        [[VideoPreviewer instance] push:videoBuffer length:(int)size];
+    }
 }
 
 /**
@@ -116,6 +136,10 @@
             }];
         }
     }
+}
+
+-(void)camera:(DJICamera *)camera didUpdateTemperatureData:(float)temperature {
+    self.fpvTemperatureData.text = [NSString stringWithFormat:@"%f", temperature];
 }
 
 @end

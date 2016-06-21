@@ -28,26 +28,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+
     // disable the connect button by default
     [self.connectButton setEnabled:NO];
     
     //Register App with key
     NSString* appKey = @"9fd34604c489f05601216201";
+
     
-    if ([appKey isEqualToString:@"Please enter your App Key here"]) {
-        ShowResult(@"Please enter App Key.");
+    if ([appKey length] == 0) {
+        ShowResult(@"Please enter your app key.");
     }
     else
     {
         [DJISDKManager registerApp:appKey withDelegate:self];
     }
-
-    self.sdkVersionLabel.text = [@"DJI SDK Version: " stringByAppendingString:[DJISDKManager getSDKVersion]];
     
+    [self initUI];
+}
+
+- (void)initUI
+{
+    self.title = @"DJI iOS SDK Sample";
+    self.sdkVersionLabel.text = [@"DJI SDK Version: " stringByAppendingString:[DJISDKManager getSDKVersion]];
     self.productFirmwarePackageVersion.hidden = YES;
     self.productModel.hidden = YES;
-    
-    self.title = @"DJI iOS SDK Sample";
+    //Disable the connect button by default
+    [self.connectButton setEnabled:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated{

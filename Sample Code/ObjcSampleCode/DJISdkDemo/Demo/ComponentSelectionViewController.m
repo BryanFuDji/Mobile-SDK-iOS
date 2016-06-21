@@ -104,16 +104,6 @@
     }
 }
 
--(void) viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    if ([DemoComponentHelper fetchProduct]) {
-        if ([DemoComponentHelper fetchProduct].delegate == self) {
-            [DemoComponentHelper fetchProduct].delegate = nil;
-        }
-    }
-}
-
 #pragma mark - DJIBaseProductDelegate
 
 // Callback for the connectivity change for a component.
@@ -121,13 +111,18 @@
 // 2. When a new component is connected (newComponent is not nil), we add an item to the table.
 -(void) componentWithKey:(NSString *)key changedFrom:(DJIBaseComponent *)oldComponent to:(DJIBaseComponent *)newComponent {
     if (oldComponent == nil && newComponent != nil) { // a new component is connected
+        for (DemoSettingItem* item in self.items[0]) {
+            if ([item.itemName isEqualToString:[key capitalizedString]]) {
+                return;
+            }
+        }
         [self.items[0] addObject:[DemoSettingItem itemWithName:[key capitalizedString] andClass:[[self componentVCDict] objectForKey:key]]];
         [self.tableView reloadData];
         return;
     }
 
     for (DemoSettingItem* item in self.items[0]) {
-        if ([item.itemName isEqualToString:key]) {
+        if ([item.itemName isEqualToString:[key capitalizedString]]) {
             if (oldComponent != nil && newComponent == nil) { // a component is disconnected
                 [self.items[0] removeObject:item];
                 [self.tableView reloadData];
